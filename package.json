@@ -1,0 +1,13 @@
+{
+  "name": "biweis-mobile-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "ai:check": "node scripts/check-deepseek.js",
+    "test": "playwright test tests/prototype-smoke.spec.js --reporter=line --workers=1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
+  }
+}

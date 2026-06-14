@@ -1,0 +1,9 @@
+{
+  "name": "笔维斯",
+  "short_name": "笔维斯",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f7f7f2",
+  "theme_color": "#187a5d",
+  "icons": []
+}

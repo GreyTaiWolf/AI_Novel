@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#187a5d" />
+    <title>笔维斯</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" id="app">
+      <section class="phone" aria-label="笔维斯手机端原型">
+        <div class="status-bar" aria-hidden="true">
+          <span>9:41</span>
+          <span class="system-dots">
+            <span></span><span></span><span></span>
+          </span>
+        </div>
+
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="sectionEyebrow">长篇奇幻 · 本地资料库</p>
+            <h1 id="sectionTitle">云上王朝</h1>
+          </div>
+          <button class="round-action" id="quickAddButton" type="button" aria-label="新增资料">+</button>
+        </header>
+
+        <section class="screen" id="screen" aria-live="polite"></section>
+        <div id="modalRoot"></div>
+
+        <nav class="bottom-nav" aria-label="主导航">
+          <button class="nav-item active" type="button" data-view="ai">
+            <span></span>
+            AI
+          </button>
+          <button class="nav-item" type="button" data-view="library">
+            <span></span>
+            资料库
+          </button>
+          <button class="nav-item" type="button" data-view="outline">
+            <span></span>
+            大纲
+          </button>
+          <button class="nav-item" type="button" data-view="graph">
+            <span></span>
+            关系
+          </button>
+          <button class="nav-item" type="button" data-view="settings">
+            <span></span>
+            设置
+          </button>
+        </nav>
+      </section>
+
+      <aside class="desktop-notes" aria-label="原型说明">
+        <h2>笔维斯创作工作台</h2>
+        <p>
+          这是 Figma 额度恢复前的本地可点击原型。它把 AI 写作、资料库、审批、关系网、时间线和主题切换先跑通。
+        </p>
+        <dl>
+          <div>
+            <dt>AIContextBundle</dt>
+            <dd>章节目标、引用资料、关系、时间线会在 AI 写作区集中展示。</dd>
+          </div>
+          <div>
+            <dt>AIProposedChange</dt>
+            <dd>AI 只提交待审批变更，用户确认后才进入资料库。</dd>
+          </div>
+          <div>
+            <dt>ThemeConfig</dt>
+            <dd>三套主题保存在本地，同一 UI 布局只替换色值。</dd>
+          </div>
+        </dl>
+      </aside>
+    </main>
+
+    <template id="toastTemplate">
+      <div class="toast" role="status"></div>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>

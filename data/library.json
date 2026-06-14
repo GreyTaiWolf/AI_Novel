@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "updatedAt": "2026-06-14T00:00:00.000Z",
+  "lore": [
+    {
+      "id": "shen",
+      "type": "人物",
+      "title": "沈青岚",
+      "summary": "女主，灵契师，正在调查云氏家族密约。",
+      "detail": "她擅长读取灵契残响，但无法伪造灵契。第 2 卷开始，她怀疑父亲旧案与云氏有关。",
+      "tags": ["主角", "灵契师", "王都"],
+      "importance": "核心",
+      "status": "有效",
+      "relations": ["云氏家族", "旧王印", "星陨宴"],
+      "fields": {
+        "role": "女主",
+        "ability": "读取灵契残响",
+        "goal": "调查父亲旧案与云氏密约"
+      },
+      "links": [],
+      "timeline": "星陨宴前后 3 日",
+      "references": ["第 8 章", "第 12 章"]
+    },
+    {
+      "id": "yun",
+      "type": "家族/势力",
+      "title": "云氏家族",
+      "summary": "王都旧贵族，掌握内阁线人与禁术残卷。",
+      "detail": "云氏表面支持新王，暗中保留旧王时代的灵契档案。",
+      "tags": ["贵族", "内阁", "敌友未明"],
+      "importance": "高",
+      "status": "有效",
+      "relations": ["沈青岚", "王都内阁", "旧王印"],
+      "fields": {
+        "members": ["shen"],
+        "allies": [],
+        "enemies": []
+      },
+      "links": [
+        {
+          "targetId": "shen",
+          "targetTitle": "沈青岚",
+          "relationType": "member",
+          "note": "被卷入云氏旧案调查"
+        },
+        {
+          "targetId": "seal",
+          "targetTitle": "旧王印",
+          "relationType": "related",
+          "note": "保存旧王时代灵契档案"
+        }
+      ],
+      "timeline": "旧王陨落后",
+      "references": ["第 6 章", "第 12 章"]
+    },
+    {
+      "id": "star-banquet",
+      "type": "事件",
+      "title": "星陨宴",
+      "summary": "王都宴会暗杀失败，暴露多个家族的秘密联系。",
+      "detail": "刺客原本目标不是新王，而是携带旧王印线索的使者。",
+      "tags": ["暗杀", "宴会", "第 12 章"],
+      "importance": "高",
+      "status": "待验证",
+      "relations": ["沈青岚", "云氏家族", "密约碎片"],
+      "fields": {
+        "cause": "宴会刺杀失败",
+        "result": "多方密约线索浮出水面"
+      },
+      "links": [],
+      "timeline": "第 2 卷中段",
+      "references": ["第 12 章"]
+    },
+    {
+      "id": "seal",
+      "type": "物品/线索",
+      "title": "旧王印",
+      "summary": "旧王时代的权力凭证，能激活古老灵契。",
+      "detail": "旧王印并非玉玺，而是一段被封存的契约坐标。",
+      "tags": ["伏笔", "灵契", "旧王"],
+      "importance": "核心",
+      "status": "有效",
+      "relations": ["沈青岚", "云氏家族"],
+      "fields": {
+        "holder": "未知",
+        "rule": "只能被真实灵契残响激活"
+      },
+      "links": [],
+      "timeline": "旧王陨落前",
+      "references": ["第 9 章", "第 12 章"]
+    },
+    {
+      "id": "spirit-contract-rule",
+      "type": "世界观/规则",
+      "title": "灵契法则",
+      "summary": "灵契记录真实誓约的残响，能被读取但不能被伪造。",
+      "detail": "灵契以誓约双方的真实意志为锚点。读取者只能捕捉残响，无法修改已成立的契约；强行伪造会留下反噬痕迹。旧王印能定位古老灵契，但不能替代誓约本身。",
+      "tags": ["世界观", "能力边界", "灵契"],
+      "importance": "核心",
+      "status": "有效",
+      "relations": ["沈青岚", "旧王印"],
+      "fields": {
+        "scope": "王都及旧王朝遗留灵契",
+        "limit": "不能伪造，只能读取或激活残响"
+      },
+      "links": [
+        {
+          "targetId": "shen",
+          "targetTitle": "沈青岚",
+          "relationType": "affects",
+          "note": "限制她的能力边界"
+        },
+        {
+          "targetId": "seal",
+          "targetTitle": "旧王印",
+          "relationType": "related",
+          "note": "旧王印可定位古老灵契"
+        }
+      ],
+      "timeline": "旧王朝至今",
+      "references": ["第 2 卷", "第 12 章"]
+    },
+    {
+      "id": "old-king-fall",
+      "type": "历史/年表",
+      "title": "旧王陨落",
+      "summary": "旧王朝崩塌，新王登基，贵族势力重新洗牌。",
+      "detail": "旧王陨落后，王都贵族公开归顺新王，暗地里争夺旧王时代的灵契档案。云氏家族保存了部分档案，成为第 2 卷权力冲突的源头。",
+      "tags": ["历史", "王都", "旧王"],
+      "importance": "高",
+      "status": "有效",
+      "relations": ["云氏家族", "旧王印"],
+      "fields": {
+        "era": "旧王陨落后",
+        "consequence": "贵族势力重新结盟"
+      },
+      "links": [
+        {
+          "targetId": "yun",
+          "targetTitle": "云氏家族",
+          "relationType": "affects",
+          "note": "云氏保留旧王档案"
+        },
+        {
+          "targetId": "seal",
+          "targetTitle": "旧王印",
+          "relationType": "related",
+          "note": "旧王时代凭证"
+        }
+      ],
+      "timeline": "旧王陨落后",
+      "references": ["第 6 章", "第 9 章", "第 12 章"]
+    }
+  ]
+}
