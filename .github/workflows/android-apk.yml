@@ -35,7 +35,7 @@ jobs:
 
       - name: Prepare static web assets
         run: |
-          rm -rf www
+          rm -rf www android capacitor.config.json
           mkdir -p www
           cp index.html styles.css app.js manifest.json www/
           cp -R data www/data
@@ -45,7 +45,16 @@ jobs:
 
       - name: Generate Android project
         run: |
-          npx cap init "Biweis" "com.greytaiwolf.biweis" --web-dir=www --npm-client=npm
+          cat > capacitor.config.json <<'EOF'
+          {
+            "appId": "com.greytaiwolf.biweis",
+            "appName": "Biweis",
+            "webDir": "www",
+            "server": {
+              "androidScheme": "https"
+            }
+          }
+          EOF
           npx cap add android
           npx cap sync android
 
@@ -53,20 +62,16 @@ jobs:
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug assembleRelease
+          ./gradlew assembleDebug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: biweis-apk
-          path: |
-            android/app/build/outputs/apk/debug/*.apk
-            android/app/build/outputs/apk/release/*.apk
+          path: android/app/build/outputs/apk/debug/*.apk
 
       - name: Publish GitHub Release
         if: startsWith(github.ref, 'refs/tags/apk-')
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            android/app/build/outputs/apk/debug/*.apk
-            android/app/build/outputs/apk/release/*.apk
+          files: android/app/build/outputs/apk/debug/*.apk
